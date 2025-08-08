@@ -32,6 +32,7 @@ jobs:
       - name: Install dependencies
         run: |
           rm -rf node_modules
+          npm i @rollup/rollup-linux-x64-gnu
           npm ci
       - name: Build
         run: npm run build
