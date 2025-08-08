@@ -31,7 +31,7 @@ export function Memo(props) {
 
   return (
     <>
-      <div className={styles.memo}>
+      <div className={styles.memo} data-test-id={id}>
         <div className={styles.header}>
           <Link to={`memo/${id}`} className={styles.title}>
             {title}
@@ -41,6 +41,7 @@ export function Memo(props) {
               className={styles.editButton}
               onClick={() => setIsEdit((on) => !on)}
               title="Edit"
+              data-test-id={`edit-button-${id}`}
             >
               <img className={styles.icon} src={pencilIcon} alt="Edit" />
             </button>
@@ -48,6 +49,7 @@ export function Memo(props) {
               className={styles.deleteButton}
               onClick={onDeleteMemo}
               title="Delete"
+              data-test-id={`delete-button-${id}`}
             >
               <img className={styles.icon} src={trashIcon} alt="Delete" />
             </button>
@@ -72,10 +74,18 @@ export function Memo(props) {
             cannot be undone.
           </p>
           <div className={styles.deleteModalButtons}>
-            <button className={styles.cancelButton} onClick={cancelDelete}>
+            <button
+              className={styles.cancelButton}
+              onClick={cancelDelete}
+              data-test-id={`cancel-delete-button-${id}`}
+            >
               Cancel
             </button>
-            <button className={styles.confirmButton} onClick={confirmDelete}>
+            <button
+              className={styles.confirmButton}
+              onClick={confirmDelete}
+              data-test-id={`confirm-delete-button-${id}`}
+            >
               Delete
             </button>
           </div>

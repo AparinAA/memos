@@ -1,0 +1,22 @@
+name: Test and lint PR
+on:
+  workflow_call:
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get repo code
+        uses: actions/checkout@v3
+      - name: Install depe
+        run: npm ci
+      - name: Start lint
+        run: npm run lint
+  unint-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get repo code
+        uses: actions/checkout@v3
+      - name: Install dep
+        run: npm ci
+      - name: Start unit-tests
+        run: npm run test:coverage

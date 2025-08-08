@@ -24,6 +24,7 @@ scripts
 *.sln
 *.sw?
 
+coverage/
 .env
 .env.production
 .env.development

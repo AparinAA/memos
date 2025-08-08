@@ -12,7 +12,7 @@ export const useVoiceInput = () => {
       const recognitionInstance = new SpeechRecognition();
       recognitionInstance.continuous = true;
       recognitionInstance.interimResults = true;
-      recognitionInstance.lang = "ru-RU";
+      recognitionInstance.lang = "en-US";
 
       recognitionInstance.onresult = (event) => {
         let finalTranscript = "";
