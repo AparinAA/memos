@@ -29,6 +29,12 @@ jobs:
         with:
           node-version: lts/*
           cache: "npm"
+      - name: Install envsubst
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gettext-base
+      - name: Generate .env
+        run: envsubst < .env.template > .env
       - name: Install dependencies
         run: |
           rm -rf node_modules
