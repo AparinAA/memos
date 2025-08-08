@@ -23,3 +23,7 @@ scripts
 *.njsproj
 *.sln
 *.sw?
+
+.env
+.env.production
+.env.development
