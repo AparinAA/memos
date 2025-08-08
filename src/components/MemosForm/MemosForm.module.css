@@ -42,7 +42,7 @@
   font-size: var(--font-size-m);
   cursor: pointer;
   transition: opacity 0.2s;
-  font-family: "YS Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: var(--color-secondary);
   color: var(--color-white);
   font-weight: 500;
