@@ -1,0 +1,4 @@
+.memosList {
+  display: grid;
+  gap: var(--spacing-m);
+}

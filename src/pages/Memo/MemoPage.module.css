@@ -1,0 +1,23 @@
+.page {
+  padding: var(--spacing-l);
+}
+
+.backButton {
+  background: var(--color-gray-100);
+  color: var(--color-black);
+  border: none;
+  padding: var(--spacing-s) var(--spacing-m);
+  border-radius: var(--radius-s);
+  cursor: pointer;
+  font-size: var(--font-size-s);
+  font-weight: 500;
+  transition:
+    opacity 0.2s ease,
+    background-color 0.2s ease;
+  margin-bottom: var(--spacing-m);
+}
+
+.backButton:hover {
+  background: var(--color-gray-200);
+  opacity: 0.95;
+}

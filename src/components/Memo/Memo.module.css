@@ -1,0 +1,129 @@
+.memo {
+  background: var(--color-white);
+  padding: var(--spacing-l);
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-s);
+  display: grid;
+  gap: var(--spacing-m);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: var(--font-size-l);
+  font-weight: 500;
+  color: var(--color-black);
+  margin: 0;
+}
+
+.content {
+  font-size: var(--font-size-m);
+  color: var(--color-black);
+  line-height: var(--line-height-m);
+  white-space: pre-wrap;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.editButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.editButton:hover {
+  background-color: var(--color-gray-200);
+}
+
+.deleteButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.deleteButton:hover {
+  background-color: var(--color-gray-200);
+}
+
+.deleteModalContent {
+  padding: 4px;
+}
+
+.deleteModalTitle {
+  margin: 0 0 16px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.deleteModalText {
+  margin: 0 0 24px 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-gray-500);
+}
+
+.deleteModalButtons {
+  display: flex;
+  gap: var(--spacing-s);
+  justify-content: flex-end;
+}
+
+.cancelButton {
+  background: var(--color-gray-100);
+  color: var(--color-black);
+  border: none;
+  padding: var(--spacing-s) var(--spacing-m);
+  border-radius: var(--radius-s);
+  cursor: pointer;
+  font-size: var(--font-size-s);
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.cancelButton:hover {
+  background: var(--color-gray-200);
+}
+
+.confirmButton {
+  background: var(--color-red);
+  color: var(--color-white);
+  border: none;
+  padding: var(--spacing-s) var(--spacing-m);
+  border-radius: var(--radius-s);
+  cursor: pointer;
+  font-size: var(--font-size-s);
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.confirmButton:hover {
+  opacity: 0.9;
+}
+
+.icon {
+  width: var(--font-size-m);
+  height: var(--font-size-m);
+  display: block;
+}

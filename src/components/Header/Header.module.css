@@ -1,0 +1,17 @@
+.title {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin: 0;
+  font-size: var(--font-size-xl);
+}
+
+.text {
+  color: var(--color-black);
+}
+
+.memosCount {
+  font-size: var(--font-size-s);
+  color: var(--color-gray-400);
+  margin-top: var(--spacing-s);
+}

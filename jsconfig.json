@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "checkJs": true,
+    "jsx": "react",
+    "module": "esnext",
+    "moduleResolution": "bundler"
+  }
+}
