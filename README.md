@@ -43,7 +43,7 @@ This will launch the app in your default web browser.
 
 - components: isolated reusable components with CSS modules.
 - pages: route-level containers that compose components and handle navigation.
-- services: data access, validation, and storage abstractions (LocalStorage/IndexedDB).
+- services: data access, validation, and storage abstractions (used LocalStorage, but we can use api of any storage ).
 - store: global application state.
 - shared: common hooks and utilities shared across the project.
 - assets: static files (SVGs, images).
@@ -55,4 +55,35 @@ This will launch the app in your default web browser.
 - SpeechRecognition API
 - LocalStorage
 
-## Deploy
+## CI/CD
+
+A full CI/CD pipeline is configured with GitHub Actions.
+
+- Orchestrator: [.github/workflows/ci.yml](.github/workflows/ci.yml)
+  - Trigger: push to master
+  - Runs two reusable workflows:
+    - Tests/Lint: [.github/workflows/test.yml](.github/workflows/test.yml)
+    - Deploy: [.github/workflows/deploy.yml](.github/workflows/deploy.yml)
+
+### Tests and lint
+
+Workflow: [.github/workflows/test.yml](.github/workflows/test.yml)
+
+- Lint: ESLint
+- Unit tests: Vitest with coverage (npm run test:coverage)
+
+### Deploy to GitHub Pages
+
+Workflow: [.github/workflows/deploy.yml](.github/workflows/deploy.yml)
+
+- Build: Vite (npm run build), Node LTS
+- Publish: GitHub Pages (actions/deploy-pages)
+- The application's base path is provided via the VITE_BASE_PATH repository variable (Settings → Variables), for example: /memos/
+
+Deployment pipeline:
+
+1. Checkout code
+2. Install Node LTS and dependencies
+3. Build with Vite (dist/)
+4. Upload Pages Artifact (dist/)
+5. Deploy to GitHub Pages
