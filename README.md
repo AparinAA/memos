@@ -15,7 +15,13 @@ My Voice Memos is a React application that allows users to create/edit delete me
 1. Clone the repository:
 
    ```
-   git clone <repository-url>
+   git clone git@github.com:AparinAA/memos.git
+   ```
+
+   or
+
+   ```
+   git clone https://github.com/AparinAA/memos.git
    ```
 
 2. Navigate to the project directory:
@@ -87,3 +93,24 @@ Deployment pipeline:
 3. Build with Vite (dist/)
 4. Upload Pages Artifact (dist/)
 5. Deploy to GitHub Pages
+
+## Growth points
+
+1. Better component decomposition
+   - Split large components into presentational (UI-only) and container (business logic) parts.
+   - Improve reusability and testability by isolating side effects and state.
+
+2. CI/CD improvements
+   - Cache npm dependencies and reuse them across jobs (test/deploy) to speed up pipelines.
+   - Alternatively, run lint/tests/build/deploy in a single job to simplify orchestration.
+
+3. Migrate to TypeScript
+   - The project uses JS for speed and simplicity; prefer TS for better DX, type safety, and maintainability.
+
+4. Language switching
+   - Add UI language switching and wire it to SpeechRecognition (recognition.lang) and UI texts.
+   - Consider i18n (e.g., react-i18next) and env-based defaults.
+
+5. Testing enhancements
+   - Increase unit test coverage for components and hooks.
+   - Add e2e tests (e.g., Playwright) for critical flows:
