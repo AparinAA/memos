@@ -33,15 +33,13 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y gettext-base
-      - name: Generate .env
-        run: envsubst < .env.template > .env
       - name: Install dependencies
         run: |
           rm -rf node_modules
           npm i @rollup/rollup-linux-x64-gnu
           npm ci
       - name: Build
-        run: npm run build
+        run: envsubst < .env.template > .env && npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
