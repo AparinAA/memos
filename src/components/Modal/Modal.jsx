@@ -11,12 +11,10 @@ export const Modal = ({ isOpen, onClose, children }) => {
     }
   };
 
-  createPortal(
+  return createPortal(
     <div className={styles.modalOverlay} onClick={handleOverlayClick}>
       <div className={styles.modalContent}>{children}</div>
     </div>,
     document.body,
   );
-
-  return null;
 };
