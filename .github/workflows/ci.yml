@@ -31,19 +31,13 @@ jobs:
         with:
           node-version: lts/*
           cache: "npm"
-      - name: Install envsubst
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y gettext-base
       - name: Install dependencies
         run: |
           rm -rf node_modules
           npm i @rollup/rollup-linux-x64-gnu
           npm ci
       - name: Build
-        run: |
-          envsubst < .env.template > .env.production
-          npm run build
+        run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
