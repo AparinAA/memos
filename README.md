@@ -54,3 +54,5 @@ This will launch the app in your default web browser.
 - React
 - SpeechRecognition API
 - LocalStorage
+
+## Deploy

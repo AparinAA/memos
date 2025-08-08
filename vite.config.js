@@ -17,4 +17,5 @@ export default defineConfig({
   build: {
     minify: false,
   },
+  base: "https://aparinaa.github.io/memos/",
 });
