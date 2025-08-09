@@ -1,7 +1,7 @@
 name: Run CI-CD Workflows
 
 on:
-  pull_request:
+  push:
     branches: ["test"]
 
 permissions:
