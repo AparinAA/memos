@@ -8,7 +8,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    container: node:22-alpine
+    container: node:lts
     env:
       VITE_BASE_PATH: ${{ vars.VITE_BASE_PATH }}
     steps:
