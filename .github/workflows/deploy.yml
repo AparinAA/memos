@@ -7,7 +7,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: alpine-latest
     env:
       VITE_BASE_PATH: ${{ vars.VITE_BASE_PATH }}
     steps:
@@ -19,10 +19,7 @@ jobs:
           node-version: lts/*
           cache: "npm"
       - name: Install dependencies
-        run: |
-          rm -rf node_modules
-          npm i @rollup/rollup-linux-x64-gnu
-          npm ci
+        run: npm ci
       - name: Build
         run: npm run build
       - name: Setup Pages
