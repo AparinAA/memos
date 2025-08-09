@@ -8,21 +8,14 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    container: node:22-alpine
     env:
       VITE_BASE_PATH: ${{ vars.VITE_BASE_PATH }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
-          cache: "npm"
       - name: Install dependencies
-        run: |
-          rm -rf node_modules
-          npm i @rollup/rollup-linux-x64-gnu
-          npm ci
+        run: npm ci
       - name: Build
         run: npm run build
       - name: Setup Pages
