@@ -2,7 +2,7 @@ name: Run CI-CD Workflows
 
 on:
   push:
-    branches: ["test"]
+    branches: ["master"]
 
 permissions:
   contents: read
