@@ -24,4 +24,8 @@ export const MemoService = {
 
     return true;
   },
+
+  getInitialMemos() {
+    return MemoApi.getInitialMemos();
+  },
 };

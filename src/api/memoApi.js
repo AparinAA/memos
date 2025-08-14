@@ -25,4 +25,10 @@ export const MemoApi = {
 
     return memoDeleted ?? null;
   },
+
+  getInitialMemos() {
+    const newMemos = storage.getItem();
+
+    return newMemos ? newMemos : [];
+  },
 };

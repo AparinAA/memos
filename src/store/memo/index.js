@@ -1,9 +1,7 @@
 import { MemoService } from "../../services/memo";
 
-const memos = await MemoService.getMemos();
-
 export const createMemoSlice = (set) => ({
-  memos,
+  memos: MemoService.getInitialMemos(),
   addMemo: async (memo) => {
     const memos = await MemoService.getMemos();
     const updatedMemos = [...memos, memo];
