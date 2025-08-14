@@ -1,20 +1,20 @@
 import { MemoApi } from "../api/memoApi";
 
 export const MemoService = {
-  setMemos(memos) {
-    MemoApi.setMemos(memos);
+  async setMemos(memos) {
+    await MemoApi.setMemos(memos);
 
     return memos;
   },
 
-  getMemos() {
-    const newMemos = MemoApi.getMemos();
+  async getMemos() {
+    const newMemos = await MemoApi.getMemos();
 
     return newMemos ? newMemos : [];
   },
 
-  deleteMemo(id) {
-    return MemoApi.deleteMemo(id);
+  async deleteMemo(id) {
+    await MemoApi.deleteMemo(id);
   },
 
   verify(memo) {
